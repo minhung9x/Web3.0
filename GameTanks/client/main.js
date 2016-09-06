@@ -21,13 +21,24 @@ var preload = function(){
     TankOnline.game.load.image('tank_left','./images/tank_player1_left_c0_t1_s1.png');
     TankOnline.game.load.image('tank_right','./images/tank_player1_right_c0_t1_s1.png');
 
+    //load bullet
+    TankOnline.game.load.image('buller_down','./images/bullet_down.png');
+    TankOnline.game.load.image('buller_up','./images/bullet_up.png');
+    TankOnline.game.load.image('buller_left','./images/bullet_left.png');
+    TankOnline.game.load.image('buller_right','./images/bullet_right.png');
+
 };
 var create = function(){
  TankOnline.player=TankOnline.game.add.sprite(200,200,'tank');
+    TankOnline.bullet = TankOnline.game.add.sprite(200,'bullet');
     TankOnline.game.physics.startSystem(Phaser.Physics.ARCADE);
     TankOnline.keyboard = TankOnline.game.input.keyboard;
-TankOnline.game.physics.arcade.enable(TankOnline.player)
+
+    TankOnline.game.physics.arcade.enable(TankOnline.player);
+
+
     TankOnline.player.loadTexture('tank_down');
+    TankOnline.bullet.loadTexture('bullet_down');
 
 };
 var update = function(){
@@ -47,6 +58,10 @@ var update = function(){
     }else{
         TankOnline.player.body.velocity.x =0;
         TankOnline.player.body.velocity.y =0;
+    }
+
+    if(TankOnline.keyboard.isDown(Phaser.KeyCode.SPACEBAR)){
+        TankOnline.bullet.body.velocity.y = TankOnline.config.TANK_SPEED;
     }
 };
 
