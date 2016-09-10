@@ -61,7 +61,11 @@ var update = function(){
     }else if(TankOnline.keyboard.isDown(Phaser.KeyCode.UP)){
         TankOnline.player.loadTexture('tank_up');
         TankOnline.player.body.velocity.y = -TankOnline.config.TANK_SPEED;
-    }else if(TankOnline.keyboard.isDown(Phaser.KeyCode.RIGHT)){
+    }else{
+        TankOnline.player.body.velocity.y = 0;
+    }
+
+        if(TankOnline.keyboard.isDown(Phaser.KeyCode.RIGHT)){
         TankOnline.player.loadTexture('tank_right');
         TankOnline.player.body.velocity.x = TankOnline.config.TANK_SPEED;
     }else if(TankOnline.keyboard.isDown(Phaser.KeyCode.LEFT)){
@@ -69,7 +73,7 @@ var update = function(){
         TankOnline.player.body.velocity.x = -TankOnline.config.TANK_SPEED;
     }else{
         TankOnline.player.body.velocity.x = 0;
-        TankOnline.player.body.velocity.y = 0;
+
     }
 //tank2
     if(TankOnline.keyboard.isDown(Phaser.KeyCode.S)){
@@ -79,7 +83,10 @@ var update = function(){
     }else if(TankOnline.keyboard.isDown(Phaser.KeyCode.W)){
         TankOnline.player2.loadTexture('tank_up');
         TankOnline.player2.body.velocity.y = -TankOnline.config.TANK_SPEED;
-    }else if(TankOnline.keyboard.isDown(Phaser.KeyCode.D)){
+    }else {
+        TankOnline.player2.body.velocity.y = 0;
+    }
+        if(TankOnline.keyboard.isDown(Phaser.KeyCode.D)){
         TankOnline.player2.loadTexture('tank_right');
         TankOnline.player2.body.velocity.x = TankOnline.config.TANK_SPEED;
     }else if(TankOnline.keyboard.isDown(Phaser.KeyCode.A)){
@@ -87,7 +94,7 @@ var update = function(){
         TankOnline.player2.body.velocity.x = -TankOnline.config.TANK_SPEED;
     }else{
         TankOnline.player2.body.velocity.x = 0;
-        TankOnline.player2.body.velocity.y = 0;
+
     }
 
 
