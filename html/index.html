@@ -1,0 +1,93 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learning html</title>
+    <style>
+        div.card{
+            display:inline-block;
+            width:176px;
+            height:246px;
+            margin:20px;
+            cursor:pointer;
+        }
+div.card div{
+    position: absolute;
+    width:160px;
+    height:230px;
+    font-size: 2em;
+    text-align:center;
+    line-height:230px;
+    color:#000;
+    background-color:#fff;
+    border: 8px solid #fff;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+div.card div.red{
+    color:#c00;
+}
+        div.card div span
+        {
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 0.5em;
+            width: auto;
+            line-height: 1em;
+        }
+
+        div.card div span:last-child
+        {
+            left: auto;
+            top: auto;
+            right: 0;
+            bottom: 0;
+            transform: rotate(180deg);
+        }
+        div.card div
+        {
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transition: all 1s ease-in-out 0.2s;
+            transition: all 1s ease-in-out 0.2s;
+        }
+        div.card div.back
+        {
+            background:
+                    linear-gradient(115deg, transparent 75%, rgba(255,255,255,.8) 75%) 0 0,
+                    linear-gradient(245deg, transparent 75%, rgba(255,255,255,.8) 75%) 0 0,
+                    linear-gradient(115deg, transparent 75%, rgba(255,255,255,.8) 75%) 7px -15px,
+                    linear-gradient(245deg, transparent 75%, rgba(255,255,255,.8) 75%) 7px -15px,
+                    #36c;
+            background-size: 15px 30px
+        }
+
+      /*  div.card div.back{
+            transform: perspective(400px) rotateY(0deg);
+        }
+        div.font{
+            transform: perspective(400px) rotateY(-179.9deg);
+        }*/
+        div.card:hover div.back{
+            transform: perspective(400px) rotateY(179.9deg);
+        }
+        div.card:hover div.font{
+            transform: perspective(400px) rotateY(0deg);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="font">
+            <span>A&#9829;</span>&#9829;<span>A&#9829;</span>
+        </div>
+        <div class="back">
+            Flip me
+        </div>
+    </div>
+</body>
+</html>
