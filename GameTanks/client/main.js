@@ -94,7 +94,7 @@ var create = function () {
             left: Phaser.KeyCode.LEFT,
             right: Phaser.KeyCode.RIGHT,
             ban: Phaser.KeyCode.SPACEBAR
-        }, TankOnline.player)
+        }, new TankController(TankOnline.inputControllers.length,400,200,TankOnline.tankGroup,TankOnline.bulletGroup))
     );
     TankOnline.inputControllers.push(
         new InputController({
@@ -103,20 +103,27 @@ var create = function () {
             left: Phaser.KeyCode.A,
             right: Phaser.KeyCode.D,
             ban: Phaser.KeyCode.H
-        }, TankOnline.player2)
+        }, new TankController(TankOnline.inputControllers.length,200,400,TankOnline.tankGroup,TankOnline.bulletGroup))
     );
+
 };
 var update = function () {
-    //
-    // TankOnline.player.move();
-    // TankOnline.player.fire();
-    // TankOnline.player2.move();
-    // TankOnline.player2.fire();
+
     TankOnline.game.physics.arcade.collide(TankOnline.tankGroup,TankOnline.wallGroup);
     TankOnline.game.physics.arcade.collide(TankOnline.bulletGroup,TankOnline.wallGroup,function(bulletSprite,wallSprite){bulletSprite.kill();},null,this);
+    TankOnline.game.physics.arcade.overlap(TankOnline.bulletGroup,TankOnline.tankGroup,function(bulletSprite,tankSprite){
+        if(bulletSprite.tankId != tankSprite.id)
+        {
+            bulletSprite.kill();
+            tankSprite.kill();
+        }
 
-    TankOnline.inputControllers[0].update();
-    TankOnline.inputControllers[1].update();
+    },null,this);
+    for(var i =0; i<TankOnline.inputControllers.length;i++){
+        TankOnline.inputControllers[i].update();
+    }
+
+
 
 
 };
