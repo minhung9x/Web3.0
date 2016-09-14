@@ -58,6 +58,7 @@ var preload = function () {
 };
 var create = function () {
 
+TankOnline.client = new Client();
 
     TankOnline.game.physics.startSystem(Phaser.Physics.ARCADE);
     TankOnline.keyboard = TankOnline.game.input.keyboard;
@@ -95,15 +96,6 @@ var create = function () {
             right: Phaser.KeyCode.RIGHT,
             ban: Phaser.KeyCode.SPACEBAR
         }, new TankController(TankOnline.inputControllers.length,400,200,TankOnline.tankGroup,TankOnline.bulletGroup))
-    );
-    TankOnline.inputControllers.push(
-        new InputController({
-            up: Phaser.KeyCode.W,
-            down: Phaser.KeyCode.S,
-            left: Phaser.KeyCode.A,
-            right: Phaser.KeyCode.D,
-            ban: Phaser.KeyCode.H
-        }, new TankController(TankOnline.inputControllers.length,200,400,TankOnline.tankGroup,TankOnline.bulletGroup))
     );
 
 };

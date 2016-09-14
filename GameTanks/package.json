@@ -1,4 +1,15 @@
 {
-  "name": "application-name",
-  "version": "0.0.1"
+  "name": "tanks",
+  "version": "1.0.0",
+  "description": "tro choi ban tank",
+  "main": "index.js",
+  "dependencies": {
+    "socket.io": "^1.4.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "author": "hung minh",
+  "license": "ISC"
 }
