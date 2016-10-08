@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$" libraries="{BomberMan/node_modules}" />
+    <file url="file://$PROJECT_DIR$/libs/socket.io-client" libraries="{BomberMan/libs/socket.io-client/node_modules}" />
+  </component>
+</project>

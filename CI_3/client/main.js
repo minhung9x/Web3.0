@@ -39,7 +39,7 @@ window.onload = function () {
             update: update
         });
 
-}
+};
 
 var preload = function () {
     TankOnline.game.load.image('tank_down', './images/tank_player1_down_c0_t1_s1.png');

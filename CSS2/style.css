@@ -1,0 +1,130 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #DDDDDD;
+}
+
+.header{
+
+    background-color: #fff;
+    padding: 15px 0;
+
+}
+
+.content{
+padding-top:20px;
+}
+.post{
+
+}
+.group{
+    padding-top:15px;
+    width: 192px;
+    height:151px;
+    text-align: center;
+    background: url('images/group.png') no-repeat;
+    position: relative;
+    float:right;
+    margin: 0 auto;
+    margin-top:400px;
+}
+.group img{
+width: 35px;
+    height: 36px;
+}
+.group P{
+    color:#3c763d;
+    line-height:1.5em;
+}
+.group img:last-child{
+    position: absolute;
+    right:0;
+    bottom:-40px;
+}
+.post-img {
+
+    position: relative;
+
+}
+.post-img > img:first-child{
+    width:100%;
+}
+.post-img:hover{
+    cursor: pointer;
+}
+.post-img:hover .post-add,.post-img:hover .post-img-view{
+    visibility: visible;
+    opacity: 1;
+}
+
+.post-add{
+    visibility: hidden;
+    opacity: 0;
+    position:absolute;
+    top: 10px;
+    left:10px;
+
+    transition: visibility 0s, opacity 1s linear ;
+
+
+}
+.post-img-view{
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    left:10px;
+    bottom: 0px;
+    transition: visibility 0s, opacity 1s linear ;
+
+
+}
+.post-img-view div{
+
+    float:left;
+    color:#fff;
+}
+.post-img-view div img{
+    margin: 5px auto;
+    display:block;
+}
+.post-img-view div p{
+    text-align: center;
+    font-weight: 500;
+}
+.post-eclip{
+    margin-right:10%;
+    width:42px;
+    height: 42px;
+    background-color: #464646;
+    float: left;
+    border-radius: 50%;
+}
+.post-title{
+    background-color: #fff;
+    padding:20px;
+
+}
+.post-title h4{
+    margin-bottom:0px;
+    margin-top:3px;
+    
+}
+.post-title p{
+    color:#9d9d9d;
+}
+.post-text{
+    text-align: justify;
+}
+.footer{
+
+}
+
+input[type=text]{
+    border: 1px solid #DDDDDD;
+    height: 32px;
+    width: 90%;
+}

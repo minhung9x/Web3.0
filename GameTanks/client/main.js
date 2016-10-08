@@ -39,7 +39,7 @@ window.onload = function () {
             update: update
         });
 
-}
+};
 
 var preload = function () {
     TankOnline.game.load.image('tank_down', './images/tank_player1_down_c0_t1_s1.png');
@@ -70,13 +70,6 @@ var create = function () {
     var tankPos = new Phaser.Point(Math.floor((Math.random() * window.innerWidth) + 1),
         Math.floor((Math.random() * window.innerHeight) + 1)  );
 
-    TankOnline.inputController =   new InputController({
-        up: Phaser.KeyCode.UP,
-        down: Phaser.KeyCode.DOWN,
-        left: Phaser.KeyCode.LEFT,
-        right: Phaser.KeyCode.RIGHT,
-        ban: Phaser.KeyCode.SPACEBAR
-    }, new TankController(1,tankPos.x,tankPos.y,TankOnline.tankGroup,TankOnline.bulletGroup));
 
 
 //   TankOnline.player = new TankController(500, 500,TankOnline.tankGroup,TankOnline.bulletGroup);
@@ -95,6 +88,13 @@ var create = function () {
     }
 
     TankOnline.client = new Client(tankPos);
+    TankOnline.inputController =   new InputController({
+        up: Phaser.KeyCode.UP,
+        down: Phaser.KeyCode.DOWN,
+        left: Phaser.KeyCode.LEFT,
+        right: Phaser.KeyCode.RIGHT,
+        ban: Phaser.KeyCode.SPACEBAR
+    }, new TankController(TankOnline.client.id,tankPos.x,tankPos.y,TankOnline.tankGroup,TankOnline.bulletGroup));
 
 
 
@@ -105,7 +105,9 @@ var update = function () {
     TankOnline.game.physics.arcade.collide(TankOnline.tankGroup,TankOnline.wallGroup);
     TankOnline.game.physics.arcade.collide(TankOnline.bulletGroup,TankOnline.wallGroup,function(bulletSprite,wallSprite){bulletSprite.kill();},null,this);
     TankOnline.game.physics.arcade.overlap(TankOnline.bulletGroup,TankOnline.tankGroup,function(bulletSprite,tankSprite){
-        if(bulletSprite.tankId != tankSprite.id)
+        if(bulletSprite.tankId != tankSprite.id
+        && tankSprite.id == TankOnline.inputController.tankController.sprite.id
+        )
         {
             bulletSprite.kill();
             tankSprite.kill();
@@ -124,7 +126,7 @@ TankOnline.onNewPlayerJoined = function (msg) {
          msg.x,
          msg.y,
          TankOnline.tankGroup,TankOnline.bulletGroup);
-}
+};
 
 TankOnline.onReceivedTanksInfo= function(msg){
     for(key in msg){
@@ -137,7 +139,7 @@ TankOnline.onReceivedTanksInfo= function(msg){
             TankOnline.bulletGroup);
     }
     }
-}
+};
 TankOnline.onPlayerTankMoved = function (msg) {
     if(TankOnline.otherTanks[msg.id]){
         TankOnline.otherTanks[msg.id].sprite.position = msg.position;
@@ -147,7 +149,13 @@ TankOnline.onPlayerTankMoved = function (msg) {
 TankOnline.onPlayerTankFired = function (msg) {
     if(TankOnline.otherTanks[msg.id]){
         TankOnline.otherTanks[msg.id].sprite.position = msg.position;
-        TankOnline.otherTanks[msg.id].fire();
+
+        TankOnline.otherTanks[msg.id].newBullet(msg.texture,msg.speed);
+    }
+};
+TankOnline.onPlayerTankDied = function (msg) {
+    if(TankOnline.otherTanks[msg.id]){
+        TankOnline.otherTanks[msg.id].destroy();
     }
 };
 
@@ -155,4 +163,4 @@ TankOnline.onPlayerTankFired = function (msg) {
 TankOnline.onPlayerDis = function(msg) {
     TankOnline.otherTanks[msg].destroy();
     delete  TankOnline.otherTanks[msg];
-}
+};

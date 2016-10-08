@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$/BomberMan" libraries="{Web3.0/BomberMan/node_modules}" />
+    <file url="file://$PROJECT_DIR$/BomberMan/libs/socket.io-client" libraries="{Web3.0/BomberMan/libs/socket.io-client/node_modules}" />
+    <file url="file://$PROJECT_DIR$/CI_5/libs/socket.io-client" libraries="{Web3.0/CI_5/libs/socket.io-client/node_modules}" />
     <file url="file://$PROJECT_DIR$/GameTanks" libraries="{Web3.0/GameTanks/node_modules}" />
     <file url="file://$PROJECT_DIR$/GameTanks/libs/socket.io-client" libraries="{Web3.0/GameTanks/libs/socket.io-client/node_modules}" />
   </component>

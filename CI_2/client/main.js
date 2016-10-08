@@ -17,7 +17,7 @@ window.onload= function(){
        create:create,
        update:update});
 
-}
+};
 var ok1 = true;
 var ok2 = true;
 var preload = function(){

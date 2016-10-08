@@ -39,7 +39,7 @@ window.onload = function () {
             update: update
         });
 
-}
+};
 
 var preload = function () {
     TankOnline.game.load.image('tank_down', './images/tank_player1_down_c0_t1_s1.png');
@@ -124,7 +124,7 @@ TankOnline.onNewPlayerJoined = function (msg) {
          msg.x,
          msg.y,
          TankOnline.tankGroup,TankOnline.bulletGroup);
-}
+};
 
 TankOnline.onReceivedTanksInfo= function(msg){
     for(key in msg){
@@ -137,7 +137,7 @@ TankOnline.onReceivedTanksInfo= function(msg){
             TankOnline.bulletGroup);
     }
     }
-}
+};
 TankOnline.onPlayerTankMoved = function (msg) {
     if(TankOnline.otherTanks[msg.id]){
         TankOnline.otherTanks[msg.id].sprite.position = msg.position;
@@ -155,4 +155,4 @@ TankOnline.onPlayerTankFired = function (msg) {
 TankOnline.onPlayerDis = function(msg) {
     TankOnline.otherTanks[msg].destroy();
     delete  TankOnline.otherTanks[msg];
-}
+};

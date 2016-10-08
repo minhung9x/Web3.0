@@ -33,8 +33,9 @@ socket.on('tankMoved',function (msg) {
         msg.id = socket.id;
         allTanks[socket.id].x = msg.position.x;
         allTanks[socket.id].y = msg.position.y;
+        socket.broadcast.emit('playerTankMoved',msg);
     }
-    socket.broadcast.emit('playerTankMoved',msg);
+
 });
 
     socket.on('tankFire',function (msg) {
@@ -44,8 +45,9 @@ socket.on('tankMoved',function (msg) {
             msg.id = socket.id;
             allTanks[socket.id].x = msg.position.x;
             allTanks[socket.id].y = msg.position.y;
+            socket.broadcast.emit('playerTankFired',msg);
         }
-        socket.broadcast.emit('playerTankFired',msg);
+
     });
 //
     socket.on('disconnect', function() {

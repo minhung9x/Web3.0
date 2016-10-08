@@ -31,12 +31,9 @@ class InputController{
 
 
      if(TankOnline.keyboard.isDown(this.keymap.ban)){
-         this.tankController.fire();
+         this.manController.fire();
 
-         TankOnline.client.fire({
 
-             position: tankPosition
-         })
 }
     }
 }

@@ -4,6 +4,7 @@
 class Client{
     constructor(tankPos){
         this.socket=io();
+
 //
 
 
@@ -37,5 +38,8 @@ class Client{
     fire(msg){
         this.socket.emit('tankFire',msg);
     }
+ die(msg){
 
+
+}
 }

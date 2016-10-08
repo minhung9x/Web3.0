@@ -41,7 +41,7 @@ class TankController {
 
         if (this.sprite.ok == true) {
 
-            switch (this.sprite.key){
+            switch (this.sprite.key) {
                 case 'tank_down':
                     var speed = new Phaser.Point(0, TankOnline.config.BULLET_SPEED);
                     var status = 'bullet_down';
@@ -64,8 +64,17 @@ class TankController {
 
 
             }
+            TankOnline.client.newBullet({
+                position: this.sprite.position,
+                texture: status,
+                speed: speed
+            });
 
-            var bullet = this.sprite.bulletGroup.create(this.sprite.position.x, this.sprite.position.y, status);
+            this.newBullet(status,speed);
+        }
+    }
+    newBullet (texture,speed){
+            var bullet = this.sprite.bulletGroup.create(this.sprite.position.x, this.sprite.position.y, texture);
 
             TankOnline.game.physics.arcade.enable(bullet);
             bullet.tankId = this.sprite.id;
@@ -77,5 +86,9 @@ class TankController {
             }.bind(this), 200);
 
         }
-    }
+
+
+        destroy(){
+            this.sprite.destroy();
+        }
 }
