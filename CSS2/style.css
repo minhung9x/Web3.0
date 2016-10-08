@@ -6,6 +6,7 @@
 
 body{
     background-color: #DDDDDD;
+    min-width: 1000px;
 }
 
 .header{
