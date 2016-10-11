@@ -117,29 +117,70 @@ body{
   left: 10px;
   font-size: 1.2em;
 }
+.plus_button2 {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  line-height: 36px;
+  border: 0 none;
+  background: transparent;
+
+  font-size: 1.2em;
+
+
+}
 
 .plus_button:hover {
   background: rgba(255,255,255, 0.8);
   color: #000000;
 }
+.plus_button2:hover {
+  background: rgba(0,0,0, 0.2);
+  color: #fff;
+}
+.girl_image_info2{
+  color: rgba(0,0,0, 0.5);
+
+
+
+}
+
 
 .girl_info_container{
   background: #ffffff;
   padding: 15px 0;
   overflow: auto;
 }
-
+.clsRight{
+  float:right;
+}
 .poster_avatar{
-  width: 42px;
-  height: 42px;
+   width: 42px;
+   height: 42px;
+   float: left;
+   margin-right: 10px;
+ }
+.poster_avatar2{
+  width: 100px;
+  height: 100px;
   float: left;
   margin-right: 10px;
 }
-
-.girl_info_container h4{
-  margin: 0;
+.avatar_comment{
+  width: 36px;
+  height: 36px;
 }
 
+.girl_info_container h4,.girl_info_container h3,.girl_info_container h2,.girl_image_comment h4{
+  margin: 0;
+}
+.girl_image_comment p{
+  margin-left:46px;
+}
+.girl_info_container big{
+  font-size:1.5em;
+  color: #8a8a8a;
+}
 .girl_info_container small{
   color: #8a8a8a;
 }
