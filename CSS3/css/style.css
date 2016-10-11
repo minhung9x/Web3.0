@@ -184,7 +184,9 @@ body{
 .girl_info_container small{
   color: #8a8a8a;
 }
-
+hr{
+  margin: 10px auto;
+}
 @media screen and (max-width: 768px){
   .header{
     position: static;
