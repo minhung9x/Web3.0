@@ -1,205 +1,106 @@
-<!doctype html>
 <html>
 <head>
-    <title>TechKids Hot Girls</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML Basic</title>
 
-    <link rel="stylesheet" type="text/css" href="libs/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--jQuery-->
     <script src="libs/jquery.min.js"></script>
-    <script src="libs/handlebars.js"></script>
-    <script src="libs/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
+    <script src="libs/bootstrap/js/bootstrap.js"></script>
 
-    <script src="libs/masonry.min.js"></script>
+    <!--slick-->
+    <link rel="stylesheet" href="libs/slick/slick.css">
+
+    <script src="libs/slick/slick.js"></script>
+
+
+    <!--asdfsdf-->
+    <link rel="stylesheet" href="css/style.css">
     <script src="main.js"></script>
-    <style>
 
-    </style>
+
 </head>
 <body>
-<header class="header">
+<div class="container">
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3">
-                <input type="text" placeholder="Enter your search..." class="form-control header_search">
-                <span class="glyphicon glyphicon-search header_search_icon" aria-hidden="true"></span>
+
+    <div class="row app-page">
+        <div class="app-page-slide">
+            <div class="col-md-4">
+                <img src="img/04_app.png" alt="hinh anh">
+
+                <h3>Wallamic</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium facere ullam voluptas.</p>
             </div>
-            <div class="col-sm-6 text-center header_logo">
-                <img src="img/Logo.png">
-                <span>HOT GIRLS</span>
+            <div class="col-md-4">
+                <img src="img/04_app.png" alt="hinh anh">
+                <h3>Wallamic</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium facere ullam voluptas.</p>
             </div>
-            <div class="col-sm-3">
-                <div class="header_user_profile">
-                    <button class="header_user_profile_button">
-                        <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
-                    </button>
-                    <button class="header_user_profile_button">
-                        <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
-                    </button>
-                    Bach Le
-                </div>
+            <div class="col-md-4">
+                <img src="img/04_app.png" alt="hinh anh">
+                <h3>Wallamic</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium facere ullam voluptas.</p>
+            </div>
+            <div class="col-md-4">
+                <img src="img/04_app.png" alt="hinh anh">
+                <h3>Wallamic</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium facere ullam voluptas.</p>
+            </div>
+            <div class="col-md-4">
+                <img src="img/04_app.png" alt="hinh anh">
+                <h3>Wallamic</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium facere ullam voluptas.</p>
+            </div>
+        </div>
+        <div class="app-page-button">
+            <div class="col-md-12">
+            <button class="btnPrev"></button>
+            <button class="btnNext"></button>
             </div>
         </div>
     </div>
-</header>
-
-<section>
-    <div class="container">
-
-        <script id="girl_item_template" type="text/x-handlebars-template">
-            {{#each this}}
-            <div class="col-sm-6 col-md-3 girl_item">
-                <div class="girl_image_container" onclick="imgclick(event)">
-                    <img src="{{imageUrl}}" class="img-responsive girl_image ">
-                    <div class="girl_image_overlay" data-id="{{id}}">
-                        <button class="plus_button">
-                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                        </button>
-                        <div class="girl_image_info text-center">
-                            <div class="row">
-                                <div class="col-xs-4">
-                                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-                                    <p>{{view}}</p>
-                                </div>
-                                <div class="col-xs-4">
-                                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                                    <p>{{date}}</p>
-                                </div>
-                                <div class="col-xs-4">
-                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                                    <p>{{plus}}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="girl_info_container">
-                    <div class="col-xs-12">
-                        <img src="{{posterAvatar}}" class="img-circle img-responsive poster_avatar">
-                        <h4>{{posterName}}</h4>
-                        <p>
-                            <small>{{posterTitle}}</small>
-                        </p>
-                    </div>
-                    <div class="col-xs-12">
-                        {{content}}
-                    </div>
-                </div>
-            </div>
-
-            {{/each}}
-
-
-        </script>
-
-        <div class="row" id="girl_item_container">
-
-        </div>
-
-        <div class="row">
-            <div class=" col-xs-12 col-sm-12 col-md-12" >
-                <div class="end-page">
-                    <div class="dot">
-                        <span><i class="glyphicon glyphicon-apple"></i></span>
-                        <span><i class="glyphicon glyphicon-apple"></i></span>
-                        <span><i class="glyphicon glyphicon-apple"></i></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-            <div id="back-top">
-                <a href="">
-                    <span class="glyphicon glyphicon-chevron-up"></span>
-                </a>
-            </div>
-
-    </div>
-
-</section>
-<script id="girl_modal_template" type="text/x-handlebars-template">
-    {{#each this}}
-    <div class="modal fade" role="dialog" id="myModal-{{id}}">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <!--body-->
-                <div class="modal-body">
-                    <div class="row">
-                        <div>
-                            <div class="col-xs-3 col-sm-6">
-                                <button class="plus_button2">
-                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                                </button>
-                            </div>
-                            <div class="col-xs-9 col-sm-6 text-center girl_image_info2">
-                                <div class="row">
-                                    <div class="col-xs-4 col-sm-3">
-                                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-                                        <p>{{view}}</p>
-                                    </div>
-                                    <div class="col-xs-4 col-sm-6">
-                                        <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                                        <p>{{date}}</p>
-                                    </div>
-                                    <div class="col-xs-4 col-sm-3">
-
-                                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                                        <p>{{plus}}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="girl_image_container">
-                            <div class="col-xs-12">
-                                <img src="{{imageUrl}}" class="img-responsive girl_image ">
-                                <div class="girl_info_container">
-                                    <div clas="col-xs-12">
-                                        <img src="{{posterAvatar}}"
-                                             class="img-circle img-responsive poster_avatar2">
-                                        <h2>{{posterName}}</h2>
-                                        <p>
-                                            <big>{{posterTitle}}</big>
-                                        </p>
-                                    </div>
-                                    <div>
-                                        {{content}}
-                                    </div>
-                                </div>
-                                <hr>
-                                {{#comment}}
-                                <div class="girl_image_comment ">
-                                    <img src="{{avatar}}"
-                                         class="img-circle img-responsive poster_avatar avatar_comment">
-                                    <div>
-                                        <h4>{{name}}</h4>
-                                        <p>{{text}} </p>
-                                    </div>
-                                </div>
-                                {{/comment}}
-                            </div>
-                        </div>
-
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-    {{/each}}
-</script>
-
-<div id="girl_modal">
 
 </div>
+</div>
 
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+
+
+
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"></button>
+
+        </div>
+        <div class="modal-body">
+            <div class="app-modal-ipad">
+                <div class="app-modal-slide">
+                    <img src="img/app-img1.jpg" alt="1">
+                    <img src="img/app-img2.jpg" alt="2">
+                    <img src="img/app-img3.jpg" alt="3">
+                    <img src="img/app-img4.jpg" alt="4">
+                    <img src="img/app-img1.jpg" alt="5">
+                    <img src="img/app-img2.jpg" alt="6">
+                    <img src="img/app-img3.jpg" alt="7">
+                </div>
+
+            </div>
+            <div class="app-modal-button">
+                <button class="btnPrev"></button>
+                <button class="btnNext"></button>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
 </body>
-
-
 </html>
